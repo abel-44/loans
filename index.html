@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Fund - Loan Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .left-column {
+            color: white;
+        }
+
+        .heading {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .subheading {
+            font-size: 1.125rem;
+            color: #d1d1d1;
+            margin-bottom: 2rem;
+        }
+        .header{
+            color: white;
+    position: absolute; /* Ensures precise positioning */
+    top: 20px;          /* Adjust distance from the top of the page */
+    left: 20px;      
+        }
+
+        .image-container {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .floating-card {
+            position: absolute;
+            top: -80px;
+            right: -40px;
+            width: 256px;
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .approval-header {
+            background: #6366f1;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .check-circle {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-circle svg {
+            width: 32px;
+            height: 32px;
+            color: #22c55e;
+        }
+
+        .card-content {
+            text-align: center;
+        }
+
+        .view-details-btn {
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-subtitle {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .select-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .info-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin: 1rem 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #4f46e5;
+        }
+
+        .terms-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .terms-text a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .terms-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .floating-card {
+                position: static;
+                margin: 1rem auto;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <div class="header">
+                <h1 class="heading">Micro Fund</h1> 
+                </div>
+
+
+                <div class="image-container">
+                    <img src="/images/l.jpg" alt="Person using mobile phone" class="main-image">
+                </div>
+                <h1 class="heading">Micro Fund</h1> 
+                <p class="subheading">
+                    Let us help you sort your expenses - top up, loan, rental loan,
+                    car loan or emergencies
+                </p>
+               
+                <!--<div class="image-container">
+                    <img src=" " alt="Person using mobile phone" class="main-image">
+                    <div class="floating-card">
+                     <div class="approval-header">
+                            <div>Loan Approved</div>
+                            <div class="check-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>Your Money is on the way.</p>
+                            <button class="view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+
+            <!-- Right Column -->
+            <div class="form-container">
+                <h2 class="form-title">Find Your Loan Eligibility</h2>
+                <p class="form-subtitle">You can qualify for Ksh. 1,500 - 10,000 loan to MPESA</p>
+                
+                <form id="loanForm">
+                    <div class="form-group">
+                        <input type="text" class="input-field" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" class="input-field" placeholder="Mpesa Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="input-field" placeholder="National ID Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="select-field" required>
+                            <option value="">Select Loan Type</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="business">Business Loan</option>
+                            <option value="emergency">Emergency Loan</option>
+                        </select>
+                    </div>
+
+                    <p class="info-text">
+                        No CRB Check • No Guarantors • Disbursed to MPESA • No Paperwork
+                    </p>
+
+                    <button type="submit" class="submit-btn">FIND YOUR LOAN ELIGIBILITY</button>
+
+                    <p class="terms-text">
+                        By submitting you confirm that you accept the 
+                        <a href="#">Terms and Conditions</a> and 
+                        <a href="#">Privacy Policy</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(e.target);
+            const formValues = Object.fromEntries(formData.entries());
+            
+            // Basic validation
+            const phoneRegex = /^(?:\+254|0)[17]\d{8}$/;
+            const idRegex = /^\d{8}$/;
+            
+            const phone = formValues['phone'];
+            const idNumber = formValues['id-number'];
+            
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid Mpesa phone number');
+                return;
+            }
+            
+            if (!idRegex.test(idNumber)) {
+                alert('Please enter a valid National ID number');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('Your loan application has been received. We will process it shortly.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'FIND YOUR LOAN ELIGIBILITY';
+                e.target.reset();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
